@@ -1,0 +1,20 @@
+[2025-09-18 19:03:39,825::sampling::INFO] {'model': {'checkpoint': '/home/user9/xxd_data/project/targetdiff-main/pretrained_models/pretrained_diffusion.pt'}, 'sample': {'seed': 2021, 'num_samples': 100, 'num_steps': 1000, 'pos_only': False, 'center_pos_mode': 'protein', 'sample_num_atoms': 'prior'}}
+[2025-09-18 19:03:46,428::sampling::INFO] Training Config: {'data': {'name': 'pl', 'path': './data/crossdocked_v1.1_rmsd1.0_pocket10', 'split': './data/crossdocked_pocket10_pose_split.pt', 'transform': {'ligand_atom_mode': 'add_aromatic', 'random_rot': False}}, 'model': {'denoise_type': 'diffusion', 'model_mean_type': 'C0', 'gt_noise_type': 'origin', 'beta_schedule': 'sigmoid', 'beta_start': 1e-07, 'beta_end': 0.002, 'v_beta_schedule': 'cosine', 'v_beta_s': 0.01, 'num_diffusion_timesteps': 1000, 'loss_v_weight': 100.0, 'v_mode': 'categorical', 'v_net_type': 'mlp', 'loss_pos_type': 'mse', 'sample_time_method': 'symmetric', 'time_emb_dim': 0, 'time_emb_mode': 'simple', 'center_pos_mode': 'protein', 'node_indicator': True, 'model_type': 'uni_o2', 'num_blocks': 1, 'num_layers': 9, 'hidden_dim': 128, 'n_heads': 16, 'edge_feat_dim': 4, 'num_r_gaussian': 20, 'knn': 32, 'num_node_types': 8, 'act_fn': 'relu', 'norm': True, 'cutoff_mode': 'knn', 'ew_net_type': 'global', 'r_feat_mode': 'sparse', 'energy_h_mode': 'basic', 'num_x2h': 1, 'num_h2x': 1, 'r_max': 10.0, 'x2h_out_fc': False, 'sync_twoup': False}, 'train': {'seed': 2021, 'batch_size': 4, 'num_workers': 4, 'max_iters': 10000000, 'val_freq': 2000, 'pos_noise_std': 0.1, 'max_grad_norm': 8.0, 'bond_loss_weight': 1.0, 'optimizer': {'type': 'adam', 'lr': 0.0005, 'weight_decay': 0, 'beta1': 0.95, 'beta2': 0.999}, 'scheduler': {'type': 'plateau', 'factor': 0.6, 'patience': 10, 'min_lr': 1e-06}}}
+[2025-09-18 19:03:46,443::sampling::INFO] Successfully load the dataset (size: 100)!
+[2025-09-18 19:03:46,507::sampling::INFO] Successfully load the model! /home/user9/xxd_data/project/targetdiff-main/pretrained_models/pretrained_diffusion.pt
+Traceback (most recent call last):
+  File "/home/user9/xxd_data/.conda/envs/targetdiff/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/user9/xxd_data/.conda/envs/targetdiff/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/opt/xxd_data/project/targetdiff-main/scripts/sample_diffusion.py", line 169, in <module>
+    data = test_set[args.data_id]
+  File "/home/user9/xxd_data/.conda/envs/targetdiff/lib/python3.8/site-packages/torch/utils/data/dataset.py", line 295, in __getitem__
+    return self.dataset[self.indices[idx]]
+  File "/opt/xxd_data/project/targetdiff-main/datasets/pl_pair_dataset.py", line 94, in __getitem__
+    data = self.get_ori_data(idx)
+  File "/opt/xxd_data/project/targetdiff-main/datasets/pl_pair_dataset.py", line 103, in get_ori_data
+    key = self.keys[idx]
+IndexError: list index out of range
+0
+len(test_set): 100

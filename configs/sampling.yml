@@ -1,0 +1,10 @@
+model:
+  checkpoint: /home/user9/xxd_data/project/targetdiff-main/pretrained_models/pretrained_diffusion.pt
+
+sample:
+  seed: 2021
+  num_samples: 30
+  num_steps: 1000
+  pos_only: False
+  center_pos_mode: protein
+  sample_num_atoms: prior
