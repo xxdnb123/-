@@ -22,6 +22,15 @@ conda activate targetdiff
 ```
 该环境包含 PyTorch 1.13 / CUDA 11.8、PyG、RDKit、OpenMM/OpenFF（用于 AMBER 能量）、SciPy、Matplotlib 等依赖。
 
+## 数据下载
+使用夸克网盘下载后，在目录下解压得到/data:
+```
+我用夸克网盘给你分享了「data.zip」，点击链接或复制整段内容，打开「夸克APP」即可获取。
+/~ce4639oIk4~:/
+链接：https://pan.quark.cn/s/4c0260b820da
+提取码：R2kD
+```
+
 ## 运行示例
 - 单卡采样（举例用 GPU0，data_id=0，batch=8）：
 ```bash
